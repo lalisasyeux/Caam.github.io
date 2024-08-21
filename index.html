@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulipanes Rosados</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .tulipanes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            animation: wave 2s infinite ease-in-out;
+        }
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .tulipan {
+            width: 50px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 50% 50% 0 0;
+            position: relative;
+            box-shadow: 0 0 15px 5px rgba(255, 182, 193, 0.8);
+            animation: glow 1.5s infinite alternate;
+        }
+        .tulipan::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 100px;
+            background-color: green;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 15px 5px rgba(255, 182, 193, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 25px 10px rgba(255, 182, 193, 1);
+            }
+        }
+        h1 {
+            color: #FF69B4; /* Un tono bonito de rosa */
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 105, 180, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tulipanes">
+        <div class="tulipan"></div>
+        <div class="tulipan"></div>
+        <div class="tulipan"></div>
+        <div class="tulipan"></div>
+        <div class="tulipan"></div>
+    </div>
+    <h1>Te amo mi princesa</h1>
+</body>
+</html>
