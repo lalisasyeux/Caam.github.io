@@ -3,65 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Elegantes</title>
+    <title>Flores para Mi Princesa</title>
     <style>
         body {
             background-color: black;
+            color: white;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        svg {
-            width: 50%;
-            height: auto;
+        .flores {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .flor {
-            transform-origin: center;
-            animation: palpitacion 2s infinite ease-in-out;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 50% 50%, #FF69B4, #FF1493);
+            border-radius: 50%;
+            position: relative;
+            animation: brillar 2s infinite alternate;
         }
 
-        @keyframes palpitacion {
-            0%, 100% {
+        .flor::before,
+        .flor::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 50% 50%, #FF69B4, #FF1493);
+            border-radius: 50%;
+        }
+
+        .flor::before {
+            top: -30px;
+            left: 0;
+        }
+
+        .flor::after {
+            top: 30px;
+            left: 0;
+        }
+
+        @keyframes brillar {
+            0% {
                 transform: scale(1);
+                box-shadow: 0 0 10px #FF69B4, 0 0 20px #FF1493;
             }
-            50% {
-                transform: scale(1.05);
+            100% {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px #FF69B4, 0 0 30px #FF1493;
             }
+        }
+
+        .boton {
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #FF1493;
+        }
+
+        .frase {
+            margin-top: 20px;
+            display: none;
+            font-size: 18px;
+            text-align: center;
+            max-width: 400px;
         }
     </style>
 </head>
 <body>
 
-<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-    <!-- Flor 1 -->
-    <g class="flor" transform="translate(200, 300)">
-        <circle cx="0" cy="0" r="40" fill="#FF6347"/>
-        <circle cx="-50" cy="-50" r="40" fill="#FF6347"/>
-        <circle cx="50" cy="-50" r="40" fill="#FF6347"/>
-        <circle cx="0" cy="-80" r="30" fill="yellow"/>
-        <rect x="-5" y="40" width="10" height="100" fill="green"/>
-    </g>
-    <!-- Flor 2 -->
-    <g class="flor" transform="translate(400, 300)">
-        <circle cx="0" cy="0" r="40" fill="#FF6347"/>
-        <circle cx="-50" cy="-50" r="40" fill="#FF6347"/>
-        <circle cx="50" cy="-50" r="40" fill="#FF6347"/>
-        <circle cx="0" cy="-80" r="30" fill="yellow"/>
-        <rect x="-5" y="40" width="10" height="100" fill="green"/>
-    </g>
-    <!-- Flor 3 -->
-    <g class="flor" transform="translate(600, 300)">
-        <circle cx="0" cy="0" r="40" fill="#FF6347"/>
-        <circle cx="-50" cy="-50" r="40" fill="#FF6347"/>
-        <circle cx="50" cy="-50" r="40" fill="#FF6347"/>
-        <circle cx="0" cy="-80" r="30" fill="yellow"/>
-        <rect x="-5" y="40" width="10" height="100" fill="green"/>
-    </g>
-</svg>
+    <div class="flores">
+        <div class="flor"></div>
+        <div class="flor"></div>
+        <div class="flor"></div>
+        <div class="flor"></div>
+        <div class="flor"></div>
+    </div>
+
+    <button class="boton" onclick="mostrarFrase()">Presiona aquí</button>
+
+    <div class="frase" id="frase">
+        Te amo mucho mi princesa hermosa, eres la mujer de mi vida en serio, te amo te amooo.
+    </div>
+
+    <script>
+        function mostrarFrase() {
+            document.getElementById("frase").style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
