@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulipanes Rosados</title>
+    <title>Flores Palpitantes</title>
     <style>
         body {
             background-color: black;
@@ -12,76 +12,95 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
+            overflow: hidden;
         }
-        .tulipanes {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            animation: wave 2s infinite ease-in-out;
-        }
-        @keyframes wave {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-        .tulipan {
-            width: 50px;
-            height: 100px;
-            background-color: pink;
-            border-radius: 50% 50% 0 0;
+
+        .flor {
             position: relative;
-            box-shadow: 0 0 15px 5px rgba(255, 182, 193, 0.8);
-            animation: glow 1.5s infinite alternate;
+            width: 100px;
+            height: 150px;
+            animation: palpitacion 2s infinite;
         }
-        .tulipan::after {
-            content: '';
+
+        .petalo {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #FF6347; /* Color rojito */
+            border-radius: 50%;
+            transform-origin: bottom center;
+        }
+
+        .petalo1 {
+            top: 20px;
+            left: 25px;
+        }
+
+        .petalo2 {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .petalo3 {
+            top: 20px;
+            right: 25px;
+        }
+
+        .centro {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tallo {
             position: absolute;
             bottom: 0;
             left: 50%;
-            transform: translateX(-50%);
             width: 10px;
             height: 100px;
             background-color: green;
+            transform: translateX(-50%);
         }
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 15px 5px rgba(255, 182, 193, 0.8);
+
+        @keyframes palpitacion {
+            0%, 100% {
+                transform: scale(1);
             }
-            100% {
-                box-shadow: 0 0 25px 10px rgba(255, 182, 193, 1);
-            }
-        }
-        h1 {
-            color: #FF69B4; /* Un tono bonito de rosa */
-            text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
-            animation: pulse 2s infinite alternate;
-        }
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(255, 105, 180, 1);
+            50% {
+                transform: scale(1.1);
             }
         }
     </style>
 </head>
 <body>
-    <div class="tulipanes">
-        <div class="tulipan"></div>
-        <div class="tulipan"></div>
-        <div class="tulipan"></div>
-        <div class="tulipan"></div>
-        <div class="tulipan"></div>
+    <div class="flor">
+        <div class="petalo petalo1"></div>
+        <div class="petalo petalo2"></div>
+        <div class="petalo petalo3"></div>
+        <div class="centro"></div>
+        <div class="tallo"></div>
     </div>
-    <h1>Te amo mi princesa</h1>
+
+    <div class="flor" style="left: -150px;">
+        <div class="petalo petalo1"></div>
+        <div class="petalo petalo2"></div>
+        <div class="petalo petalo3"></div>
+        <div class="centro"></div>
+        <div class="tallo"></div>
+    </div>
+    
+    <div class="flor" style="left: 150px;">
+        <div class="petalo petalo1"></div>
+        <div class="petalo petalo2"></div>
+        <div class="petalo petalo3"></div>
+        <div class="centro"></div>
+        <div class="tallo"></div>
+    </div>
 </body>
 </html>
