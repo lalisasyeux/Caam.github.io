@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Palpitantes</title>
+    <title>Flores Elegantes</title>
     <style>
         body {
             background-color: black;
@@ -12,60 +12,16 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden;
+        }
+
+        svg {
+            width: 50%;
+            height: auto;
         }
 
         .flor {
-            position: relative;
-            width: 100px;
-            height: 150px;
-            animation: palpitacion 2s infinite;
-        }
-
-        .petalo {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #FF6347; /* Color rojito */
-            border-radius: 50%;
-            transform-origin: bottom center;
-        }
-
-        .petalo1 {
-            top: 20px;
-            left: 25px;
-        }
-
-        .petalo2 {
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .petalo3 {
-            top: 20px;
-            right: 25px;
-        }
-
-        .centro {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            width: 30px;
-            height: 30px;
-            background-color: yellow;
-            border-radius: 50%;
-            transform: translateX(-50%);
-        }
-
-        .tallo {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 10px;
-            height: 100px;
-            background-color: green;
-            transform: translateX(-50%);
+            transform-origin: center;
+            animation: palpitacion 2s infinite ease-in-out;
         }
 
         @keyframes palpitacion {
@@ -73,34 +29,39 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
         }
     </style>
 </head>
 <body>
-    <div class="flor">
-        <div class="petalo petalo1"></div>
-        <div class="petalo petalo2"></div>
-        <div class="petalo petalo3"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-    </div>
 
-    <div class="flor" style="left: -150px;">
-        <div class="petalo petalo1"></div>
-        <div class="petalo petalo2"></div>
-        <div class="petalo petalo3"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-    </div>
-    
-    <div class="flor" style="left: 150px;">
-        <div class="petalo petalo1"></div>
-        <div class="petalo petalo2"></div>
-        <div class="petalo petalo3"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-    </div>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Flor 1 -->
+    <g class="flor" transform="translate(200, 300)">
+        <circle cx="0" cy="0" r="40" fill="#FF6347"/>
+        <circle cx="-50" cy="-50" r="40" fill="#FF6347"/>
+        <circle cx="50" cy="-50" r="40" fill="#FF6347"/>
+        <circle cx="0" cy="-80" r="30" fill="yellow"/>
+        <rect x="-5" y="40" width="10" height="100" fill="green"/>
+    </g>
+    <!-- Flor 2 -->
+    <g class="flor" transform="translate(400, 300)">
+        <circle cx="0" cy="0" r="40" fill="#FF6347"/>
+        <circle cx="-50" cy="-50" r="40" fill="#FF6347"/>
+        <circle cx="50" cy="-50" r="40" fill="#FF6347"/>
+        <circle cx="0" cy="-80" r="30" fill="yellow"/>
+        <rect x="-5" y="40" width="10" height="100" fill="green"/>
+    </g>
+    <!-- Flor 3 -->
+    <g class="flor" transform="translate(600, 300)">
+        <circle cx="0" cy="0" r="40" fill="#FF6347"/>
+        <circle cx="-50" cy="-50" r="40" fill="#FF6347"/>
+        <circle cx="50" cy="-50" r="40" fill="#FF6347"/>
+        <circle cx="0" cy="-80" r="30" fill="yellow"/>
+        <rect x="-5" y="40" width="10" height="100" fill="green"/>
+    </g>
+</svg>
+
 </body>
 </html>
